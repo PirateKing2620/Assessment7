@@ -1,0 +1,37 @@
+Timing Results for extraLargeArray
+Passed to doublerAppend: 3.4433 ms
+Passed to doublerInsert: 1.0836218 s
+
+
+Timing Results for tinyArray
+Passed to doublerAppend: 105.6 μs
+Passed to doublerInsert: 42.7 μs
+
+
+Timing Results for smallArray
+Passed to doublerAppend: 99.5 μs
+Passed to doublerInsert: 51.7 μs
+
+
+Timing Results for mediumArray
+Passed to doublerAppend: 142.4 μs
+Passed to doublerInsert: 276.9 μs
+
+
+Timing Results for largeArray
+Passed to doublerAppend: 568.9 μs
+Passed to doublerInsert: 9.0586 ms
+
+
+Paragraph
+It looks like the doublerAppend function scales better.
+It only goes up by a little bit of time everytime.
+The doublerInsert goes up by much more time everytime, with the biggest one
+being over a second to complete.
+
+Extra
+The .unshift() version of the functions take longer because it is actually
+0(n) while the .push() version is 0(1). Because unshift() has to 
+increment all the elements that already present in the Array. 
+But, push() has to insert an element at the end of the array, 
+so none of the Array elements' index has to change.
