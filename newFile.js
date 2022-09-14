@@ -1,4 +1,6 @@
 // Add to zero
+array = []
+
 for (let i = 0; i < array.length; i += 1) {
     if (array[i] + array[i] === 0) {
         console.log('true')
@@ -42,18 +44,18 @@ const isPangram = (str = '') => {
 
 
 // Longest Word
-function longest(str) {
-    var words = arguments.split(" ");
-    var words_count = words.length;
-  
-    var longest_word_length = 0;
-  
-   for(var i = 0; i < words_count; i++){
-     if(longest_word_length < words[i].length){
-         longest_word_length = words[i].length;
-     }
-  }
-  return longest_word_length;
-  }
+function find_longest_word(str)
+{
+  var array1 = str.match(/\w[a-z]{0,}/gi);
+  var result = array1[0];
 
+  for(var x = 1 ; x < array1.length ; x++)
+  {
+    if(result.length < array1[x].length)
+    {
+    result = array1[x];
+    } 
+  }
+  return result;
+}
 // 0(n)
